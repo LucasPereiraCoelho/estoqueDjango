@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Products, Categories
 from random import randint
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required(redirect_field_name='login')
 def index(request):
     produtos = Products.objects.filter(in_stock=True)
     return render(request, 'pages/index.html', {'produtos':produtos})

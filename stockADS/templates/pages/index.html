@@ -33,6 +33,9 @@
       
       </nav>
       <h1>{{user}}</h1>
+      <h1>
+        <a href="{% url 'logout' %}">Sair</a>
+      </h1>
 
       <div class="container m-5">
         <a class="btn btn-primary" href="{% url 'add_product' %}" role="button">Adicionar Produtos</a>
